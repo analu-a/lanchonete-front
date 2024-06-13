@@ -1,94 +1,94 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const produtos = [
-        {
-            nome: 'X bancon',
-            descricao: 'Três hamburgueres bovinos (150g) em pão brioche tostado na manteiga, fatias crocantes de bacon e molho especial da casa.',
-            preco: 'R$ 49,50',
-            imagem: '../img/lanche1.png'
-        },
-        {
-            nome: 'Refrigerante',
-            descricao: 'Refrigerante de cola em lata 350ml.',
-            preco: 'R$ 5,00',
-            imagem: '../img/bebida1.png'
-        },
-        {
-            nome: 'Torta de chocolate',
-            descricao: 'Deliciosa torta de chocolate com cobertura de ganache.',
-            preco: 'R$ 8,00',
-            imagem: '../img/sobremesa1.png'
-        },
-        {
-            nome: 'Cerveja',
-            descricao: 'Cerveja gelada, perfeita para acompanhar seu lanche.',
-            preco: 'R$ 7,00',
-            imagem: '../img/bebida_alcoolica1.png'
-        }
-    ];
+'use strict'
 
-    async function getProdutos (){
-        const url = 'http://localhost:8080/v1/lanchonete/produtos'
-        const response = await fetch(url)
-        const data = await response.json()
-        console.log(data);
-        return data
-    
-    }
+import { getProdutos } from "./requisicoes_produtos.js"
+import { preencherContainer } from "./homeprodutos.js"
 
-    const popup = document.getElementById('popup');
-    const popupNome = document.getElementById('popup-produto-nome');
-    const popupDescricao = document.getElementById('popup-produto-descricao');
-    const popupPreco = document.getElementById('popup-produto-preco');
-    const popupImagem = document.getElementById('popup-produto-imagem');
+export function criarCardCardapio(produto) {
 
-    function openPopup(produto) {
-        popupNome.textContent = produto.nome;
-        popupDescricao.textContent = produto.descricao;
-        popupPreco.textContent = produto.preco;
-        popupImagem.src = produto.imagem;
-        popup.style.display = 'block';
-    }
+    const product_box = document.createElement('div')
+    product_box.classList.add("product_box")
 
-    function closePopup() {
-        popup.style.display = 'none';
-    }
+    const product_pic = document.createElement('img')
+    product_pic.classList.add("product_pic")
+    product_pic.src = produto.fotoProduto
 
-    function adicionarProdutoAoCarrinho() {
-        const produto = {
-            nome: popupNome.textContent,
-            descricao: popupDescricao.textContent,
-            preco: popupPreco.textContent,
-            imagem: popupImagem.src
-        };
-        // Aqui você pode adicionar o produto ao carrinho
-        closePopup();
-    }
+    const product_name = document.createElement('h1')
+    product_name.classList.add("product_name")
+    product_name.textContent = produto.nomeProduto
 
-    document.querySelectorAll('.product-box').forEach((box, index) => {
-        box.addEventListener('click', () => {
-            openPopup(produtos[index]);
-        });
+
+    product_box.append(product_pic, product_name)
+
+    return product_box
+}
+
+export function preencherCardCardapio() {
+
+    const allCategorias = document.getElementById('allCategorias')
+    const produtos = getProdutos()
+
+    produtos.nomeProduto.forEach(produto => {
+        
+        const cardCardapio = criarCardCardapio(produto)
+        allCategorias.appendChild(cardCardapio)
     });
+}
 
-    document.querySelector('.close-btn').addEventListener('click', closePopup);
-    document.querySelector('.add-to-cart-btn').addEventListener('click', adicionarProdutoAoCarrinho);
-});
+export function openPopup(product) {
+    document.getElementById('popup-produto-nome').textContent = product.nomeProduto;
+    document.getElementById('popup-produto-imagem').src = product.fotoProduto;
+    document.getElementById('popup-produto-descricao').textContent = product.descricaoProduto;
+    document.getElementById('popup-produto-preco').textContent = product.precoProduto;
+    document.getElementById('popup').style.display = 'block';
+}
 
-function adicionarProdutoAoCarrinho() {
-    const nome = document.getElementById('popup-produto-nome').textContent;
-    const descricao = document.getElementById('popup-produto-descricao').textContent;
-    const preco = document.getElementById('popup-produto-preco').textContent;
-    const imagem = document.getElementById('popup-produto-imagem').src;
+const btn_close_popup = document.getElementById('btn_close_popup')
+btn_close_popup.addEventListener('click', () => {
+    document.getElementById('popup').style.display = 'none';
+})
 
-    const produto = { nome, descricao, preco, imagem };
+const close_popup = document.getElementById('close_popup')
+close_popup.addEventListener('click', () => {
+    document.getElementById('popup').style.display = 'none';
+})
 
-    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+// document.querySelectorAll('.product-box').forEach((box, index) => {
+//     box.addEventListener('click', async () => {
+//         // console.log(box)
+//         const produtos = await getProdutos()
+//         openPopup(produtos);
+//     });
+// });
+
+export function adicionarProdutoAoCarrinho() {
+    const nomeProduto = document.getElementById('popup-produto-nome').textContent;
+    const descricaoProduto = document.getElementById('popup-produto-descricao').textContent;
+    const precoProduto = document.getElementById('popup-produto-preco').textContent;
+    const fotoProduto = document.getElementById('popup-produto-imagem').src;
+
+    let produto = {
+        nomeProduto,
+        descricaoProduto,
+        precoProduto,
+        fotoProduto
+    };
+
+    let carrinho = []
+
+    carrinho = JSON.parse(localStorage.getItem('carrinho'))
 
     carrinho.push(produto);
 
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-    // Redireciona para a página de pedidos
-    window.location.href = 'pedidos.html';
+    document.getElementById('popup').style.display = 'none';
 }
 
+const btn_add_carrinho = document.getElementById('btn_add_carrinho')
+btn_add_carrinho.addEventListener('click', adicionarProdutoAoCarrinho);
+
+
+window.onload = async () =>{
+
+    preencherContainer()
+}

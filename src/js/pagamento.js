@@ -4,15 +4,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrinhoParaPagamento = JSON.parse(localStorage.getItem('carrinhoParaPagamento')) || [];
     const popupConfirmacao = document.getElementById('popup-confirmacao');
 
+    async function getProdutos (){
+        const url = 'http://localhost:8080/v1/lanchonete/produtos'
+        const response = await fetch(url)
+        const data = await response.json()
+        console.log(data);
+        return data
+    
+    }
+getProdutos()
+
     const createPedidoCard = (product) => {
+        console.log(product);
+        
         const card = document.createElement('div');
         card.classList.add('bg-[#622c05]', 'h-28', 'w-[180vh]', 'rounded-lg', 'translate-x-10', 'flex', 'items-center', 'mb-8');
 
         card.innerHTML = `
-            <img src="${product.imagem}" alt="img do card de pedidos" class="size-[90px]" style="transform: translate(10px)">
+            <img src="${product.fotoProduto}" alt="img do card de pedidos" class="size-[90px]" style="transform: translate(10px)">
             <article class="p-5 text-white ">
-                <h1 class="font-medium space-y-4">${product.nome}</h1>
-                <p class="text-orange-50">${product.descricao}</p>
+                <h1 class="font-medium space-y-4">${product.nomeProduto}</h1>
+                <p class="text-orange-50">${product.descricaoProduto}</p>
                 <p>${product.preco}</p>
             </article>
         `;
@@ -73,4 +85,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     carregarPedidosParaPagamento();
+    
 });
