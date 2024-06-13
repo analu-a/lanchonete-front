@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../input.css" rel="stylesheet">
+    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../js/cadastro2.js">
+    <title>Cadastro e Preferências</title>
+</head>
+
+
+
+<body class="bg-[#FDEDD5] flex items-center justify-center min-h-screen">
+
+    <div class="text-center flex flex-col items-center justify-center space-y-32">
+
+        <header>
+            <h1 class="text-4xl text-[#86765D] font-semibold font-serif">
+                Nos ajude a te conhecer melhor
+            </h1>
+        </header>
+
+        <div class="h-[80vh] w-[90vh] bg-[#8f6f3b94] flex flex-col justify-center items-center rounded-2xl space-y-5"
+            style="transform: translateY(-60px);">
+
+
+            <div class="space-y-5 self-center" style="transform: translateY(-20px);">
+
+                <!-- NOME -->
+                <input id="nome" class="w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
+                    placeholder="Nome:" type="text">
+
+                <!-- E-MAIL -->
+                <input id="email" class="w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
+                    placeholder="E-mail:" type="email">
+
+                <!-- ENDEREÇO -->
+                <input id="endereco" class="w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
+                    placeholder="Endereço:" type="text">
+
+                <!-- TELEFONE -->
+                <input id="telefone" class="w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
+                    placeholder="Telefone:" type="tel">
+
+            </div>
+
+
+            <div class="space-y-10" style="transform: translateY(-5px);">
+
+                <h1 class="font-semibold text-orange-950 text-2xl">
+                    Suas preferências
+                </h1>
+
+            </div>
+
+            <div id="preferencias" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Frango">
+                    <label class="text-orange-950 font-semibold ml-2">Frango</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Ovos">
+                    <label class="text-orange-950 font-semibold ml-2">Ovos</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Salsicha">
+                    <label class="text-orange-950 font-semibold ml-2">Salsicha</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Queijo">
+                    <label class="text-orange-950 font-semibold ml-2">Queijo</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Carne">
+                    <label class="text-orange-950 font-semibold ml-2">Carne</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Tomate">
+                    <label class="text-orange-950 font-semibold ml-2">Tomate</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Picles">
+                    <label class="text-orange-950 font-semibold ml-2">Picles</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Alface">
+                    <label class="text-orange-950 font-semibold ml-2">Alface</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Cebola">
+                    <label class="text-orange-950 font-semibold ml-2">Cebola</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Pepino">
+                    <label class="text-orange-950 font-semibold ml-2">Pepino</label>
+                </div>
+            </div>
+
+            <div>
+                <a href="./login.html">
+                    <button id="submitBtn" class="bg-[#927c5bbd] rounded-md w-40 h-10 font-semibold" style="transform: translateY(20px);">
+                        Prosseguir
+                    </button>
+                </a>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

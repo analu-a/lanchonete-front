@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../input.css" rel="stylesheet">
+    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../product.css">
+    <link rel="stylesheet" href="../cardapio.css">
+    <link rel="stylesheet" href="../popup.css">
+    <script src="../js/cardapio.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-[#FDEDD5] overflow-x-hidden">
+    <header class="flex bg-[#622C05] w-[210vh] h-[9vh] self-center">
+        <a href="./home.html">
+            <img src="../img/logo.png" alt="logo" class="">
+        </a>
+        <h1 class="self-center translate-x-10 font-medium text-2xl text-[#FDEDD5]">Cardápio</h1>
+        <a href="./pedidos.html">
+            <h1 class="self-center translate-x-10 font-medium text-2xl text-[#FDEDD5]" style="transform: translate(100px) translateY(25px);">Seus pedidos</h1>
+        </a>
+    </header>
+
+    <div class="flex">
+        <div class="h-screen w-screen bg-[#FDEDD5] grid p-10 space-y-10 self-center">
+            <nav class="bg-[#622c056b] fixed flex flex-col rounded-3xl items-start nav z-10 left-16 top-20">
+                <img src="../img/burguer (2).png" alt="burger-icon" onclick="filtrarCategoria('hamburguer')">
+                <img src="../img/drink (1).png" alt="drink-icon" onclick="filtrarCategoria('bebida')">
+                <img src="../img/sobremesas.png" alt="dessert-icon" onclick="filtrarCategoria('sobremesa')">
+                <img src="../img/bebidas.png" alt="beverage-icon" onclick="filtrarCategoria('bebida_alcoolica')">
+            </nav>
+
+            <!-- card lanche -->
+            <div class="product-box hamburguer">
+                <img src="../img/lanche1.png" alt="burger-pic" class="product-pic">
+                <h1 class="product-name">X bancon</h1>
+            </div>
+            <!-- card bebida -->
+            <div class="product-box bebida">
+                <img src="../img/bebida1.png" alt="drink-pic" class="product-pic">
+                <h1 class="product-name">Refrigerante</h1>
+            </div>
+            <!-- card sobremesa -->
+            <div class="product-box sobremesa">
+                <img src="../img/sobremesa1.png" alt="dessert-pic" class="product-pic">
+                <h1 class="product-name">Torta de chocolate</h1>
+            </div>
+            <!-- card bebida alcoólica -->
+            <div class="product-box bebida_alcoolica">
+                <img src="../img/bebida_alcoolica1.png" alt="beverage-pic" class="product-pic">
+                <h1 class="product-name">Cerveja</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Estrutura do Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div class="popup-flex">
+                <img id="popup-produto-imagem" class="popup-produto-imagem" src="" alt="">
+                <div class="popup-produto-info">
+                    <h2 id="popup-produto-nome" class="popup-produto-nome"></h2>
+                    <p id="popup-produto-descricao" class="popup-produto-descricao"></p>
+                    <p id="popup-produto-preco" class="popup-produto-preco"></p>
+                    <!-- Botão para adicionar ao carrinho -->
+                    <button class="add-to-cart-btn" onclick="adicionarProdutoAoCarrinho()">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

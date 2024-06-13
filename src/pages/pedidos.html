@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seus Pedidos</title>
+    <link href="../homeprodutos.css" rel="stylesheet">
+    <link href="../input.css" rel="stylesheet">
+    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../popup.css">
+
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -20px; /* Margem negativa para mover para cima */
+            margin-bottom: 20px; /* Margem inferior para separar do conteúdo abaixo */
+        }
+
+        .button-container button {
+            margin: 0 10px; /* Ajuste a margem lateral conforme necessário */
+        }
+    </style>
+</head>
+
+<body class="bg-[#ffeed3] overflow-x-hidden">
+
+    <header class="flex bg-[#622c05] w-full h-[9vh] items-center">
+        <a href="./home.html">
+            <img class="size-16 ml-2" src="../img/logo.png" alt="logo">
+        </a>
+        <nav class="flex-1 flex justify-around">
+            <a href="cardapio.html" class="text-white font-bold">Cardápio</a>
+            <a href="quemsomos.html" class="text-white font-bold">Quem somos</a>
+            <a href="promocoes.html" class="text-white font-bold">Promoções</a>
+            <a href="pedidos.html" class="text-white font-bold">Seus Pedidos</a>
+        </nav>
+        <a href="./pefiilusuario.html">
+            <img class="mr-4" src="../img/perfil.png" alt="foto-perfil">
+        </a>
+    </header>
+
+    <h1 class="text-[#622c05] text-3xl text-center font-semibold p-5" style="transform: translateY(20px);">Seus Pedidos</h1>
+
+    <div id="pedidos-container" class="p-14 bg-center self-center"></div>
+
+    <div class="button-container">
+        <button id="limpar-carrinho-btn" class="bg-orange-800 text-white px-4 py-2 rounded">Limpar Carrinho</button>
+        <button id="prosseguir-btn" class="bg-orange-800 text-white px-4 py-2 rounded">Prosseguir para Pagamento</button>
+    </div>
+
+    <div id="popup-confirmacao" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="fecharPopupConfirmacao()">&times;</span>
+            <p>Você deseja realmente finalizar o pedido?</p>
+            <button id="cancelar-btn" class="bg-red-500 text-white px-4 py-2 rounded">Cancelar</button>
+            <button id="finalizar-btn" class="bg-green-500 text-white px-4 py-2 rounded">Finalizar</button>
+        </div>
+    </div>
+
+    <script src="../js/pedidos.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../input.css" rel="stylesheet">
+    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../editarperfil.css">
+    <script src="../js/editarperfil.js"></script>
+</head>
+<body class="bg-[#FDEDD5]">
+    <div class="flex">
+        <div class="bg-[#622C05] h-[75vh] w-[55vh] translate-x-11 translate-y-28 rounded-2xl flex items-center justify-center">
+            <div id="container" class="w-full max-w-sm space-y-20">
+                <form id="contato-form" class="flex flex-col space-y-4 items-center">
+                    <input type="hidden" id="usuario-id">
+                    <div class="flex flex-col items-center">
+                        <label for="foto-upload" class="cursor-pointer">
+                            <div id="foto-container" class="flex items-center justify-center bg-white rounded-full w-24 h-24">
+                                <span id="foto-placeholder" class="text-gray-500">Add Foto</span>
+                                <img id="foto-preview" src="" alt="Foto" class="hidden rounded-full w-24 h-24 object-cover">
+                            </div>
+                        </label>
+                        <input type="file" id="foto-upload" class="hidden">
+                    </div>
+                    <input type="text" id="nome" placeholder="Nome" required class="p-2 rounded w-4/5">
+                    <input type="email" id="email" placeholder="Email" required class="p-2 rounded w-4/5">
+                    <input type="text" id="foto-url" placeholder="URL da Foto" class="p-2 rounded w-4/5">
+                    <input type="tel" id="telefone" placeholder="Telefone" class="p-2 rounded w-4/5">
+                    <input type="text" id="endereco" placeholder="Endereço" class="p-2 rounded w-4/5">
+                    <button type="submit" id="adicionar-btn" class="p-2 bg-orange-800 text-white rounded w-4/5">Editar perfil</button>
+                    <button type="button" id="salvar-btn" style="display: none;" class="p-2 bg-orange-300 text-white rounded w-4/5">Prosseguir</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="self-center translate-x-[500px]">
+            <img src="../img/lanchelogo.png" alt="">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

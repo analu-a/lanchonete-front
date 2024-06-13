@@ -1,0 +1,15 @@
+.product-box{
+    height: 100px;
+    width: 120px;
+    display: grid;
+}
+.product-name{
+    font-size: 20px;
+    color: #622C05;
+    font-family: "Acme", sans-serif;
+    justify-self: center;
+}
+.nav{
+    bottom: 0;
+    justify-self: center;
+}

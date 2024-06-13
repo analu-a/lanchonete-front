@@ -1,0 +1,38 @@
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card article h1 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #622C05;
+}
+
+.card article p {
+    font-size: 14px;
+    color: #333;
+}
+
+.card .preco {
+    font-weight: bold;
+    color: #622C05;
+}

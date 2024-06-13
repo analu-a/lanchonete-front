@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link href="../homeprodutos.css" rel="stylesheet">
+    <link href="../input.css" rel="stylesheet">
+    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../popup.css">
+</head>
+
+<body class="bg-[#ffeed3] overflow-x-hidden">
+
+    <header class="flex bg-[#622c05] w-full h-[9vh] items-center">
+        <a href="./home.html">
+            <img class="size-16 ml-2" src="../img/logo.png" alt="logo">
+        </a>
+        <nav class="flex-1 flex justify-around">
+            <a href="cardapio.html" class="text-white font-bold">Cardápio</a>
+            <a href="quemsomos.html" class="text-white font-bold">Quem somos</a>
+            <a href="promocoes.html" class="text-white font-bold">Promoções</a>
+            <a href="pedidos.html" class="text-white font-bold">Seus Pedidos</a>
+        </nav>
+        <a href="./pefiilusuario.html">
+            <img class="mr-4" src="../img/perfil.png" alt="foto-perfil">
+        </a>
+    </header>
+
+    <h1 class="text-[#622c05] text-3xl text-center font-semibold p-5" style="transform: translateY(20px);">Pagamento</h1>
+
+    <div id="pagamento-container" class="p-14 bg-center"></div>
+    <div id="total-container" class="text-center text-[#622c05] text-xl"></div>
+
+    <button id="finalizar-pagamento-btn" class="fixed bottom-10 right-10 bg-orange-800 text-white px-4 py-2 rounded">Finalizar Pagamento</button>
+
+    <!-- Popup de confirmação -->
+    <div id="popup-confirmacao" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="fecharPopupConfirmacao()">&times;</span>
+            <p>Deseja realmente finalizar o pedido?</p>
+            <button class="bg-orange-200 rounded-md font-medium" id="finalizar-btn">Finalizar</button>
+            <button class="bg-orange-200 rounded-md" id="cancelar-btn">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="../js/pagamento.js" defer></script>
+</body>
+
+</html>

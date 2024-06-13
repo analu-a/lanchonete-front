@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Página Inicial</title>
+    <link href="../homeprodutos.css" rel="stylesheet">
+    <link href="../input.css" rel="stylesheet">
+    <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../popup.css">
+    <link rel="stylesheet" href="./home.html">
+</head>
+
+<body class="bg-[#ffeed3] overflow-y-scroll overflow-x-hidden ">
+
+    <header class="flex bg-[#622c05] w-full h-[9vh] items-center">
+        <!-- img de logo barra superior -->
+        <img class="size-16 ml-2" src="../img/logo.png" alt="logo">
+
+        <nav class="flex-1 flex justify-around">
+            <a href="cardapio.html" class="text-white font-bold">Cardápio</a>
+            <a href="quemsomos.html" class="text-white font-bold">Quem somos</a>
+            <a href="promocoes.html" class="text-white font-bold">Promoções</a>
+            <a href="pedidos.html" class="text-white font-bold">Seus Pedidos</a>
+        </nav>
+
+        <a href="./pefiilusuario.html">
+            <img class="mr-4" src="../img/perfil.png" alt="foto-perfil">
+        </a>
+    </header>
+
+    <!-- banner de promoções -->
+    <div class="bg-[#3B1C05] h-52 w-full flex items-stretch">
+        <!-- img do lanche da promoção -->
+        <img class="translate-x-6 opacity-50" src="../img/lanche bannner.png" alt="lanche do baner de promoção">
+        <!-- textos do banner de promoção -->
+        <article class="py-10">
+            <h1 class="text-[#9C7E50] font-extrabold text-5xl translate-x-16">
+                NOVIDADE!!!
+            </h1>
+            <p class="text-[#9C7E50] font-medium text-2xl translate-x-16">
+                Acabou de chegar o lanche dos seus sonhos
+            </p>
+            <p class="text-[#FDEDD5] font-extrabold text-4xl translate-x-16">
+                DUPLO BACON BARBECUE
+            </p>
+            <p class="text-[#c6ae8a] text-[20px] font-bold translate-x-[168vh]">
+                Por apenas R$50,00
+            </p>
+        </article>
+    </div>
+
+    <div class="mt-8">
+        <h1 class="text-[#622C05] font-extrabold text-[20px] translate-x-10">NOVIDADES</h1>
+    </div>
+
+    <div class="flex flex-wrap justify-center space-x-12 mt-4" id="card">
+        <!-- Cards de novidades vão ser inseridos aqui -->
+    </div>
+
+    <div class="mt-8">
+        <h1 class="text-[#622C05] font-extrabold text-[20px] translate-x-10">FAVORITOS</h1>
+    </div>
+
+    <div class="flex flex-wrap justify-center space-x-12 mt-4" id="favoritos">
+        <!-- Cards de favoritos serão inseridos aqui -->
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div class="popup-flex">
+                <img id="popup-produto-imagem" class="popup-produto-imagem" src="" alt="">
+                <div class="popup-produto-info">
+                    <h2 id="popup-produto-nome" class="popup-produto-nome"></h2>
+                    <p id="popup-produto-descricao" class="popup-produto-descricao"></p>
+                    <p id="popup-produto-preco" class="popup-produto-preco"></p>
+                    <!-- Aqui ajustamos o botão para chamar a função adicionarProdutoAoCarrinho -->
+                    <button class="add-to-cart-btn" onclick="adicionarProdutoAoCarrinho()">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adicione o contêiner de pedidos -->
+    <div id="pedidos-container" class="py-12 p-24"></div>
+
+
+    <script src="../js/homeprodutos.js" defer></script>
+    <script src="../js/pedidos.js" defer></script>
+
+    <script src="../js/pedidos.js" defer></script>
+    
+</body>
+
+</html>

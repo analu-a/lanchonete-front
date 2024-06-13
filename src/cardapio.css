@@ -1,0 +1,69 @@
+
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.grid {
+    display: grid;
+}
+
+.p-10 {
+    padding: 2.5rem;
+}
+
+.space-y-10 > * {
+    margin-bottom: 2.5rem;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.flex {
+    display: flex;
+}
+
+.rounded-3xl {
+    border-radius: 1rem;
+}
+
+.items-center {
+    align-items: center;
+}
+
+
+.nav {
+    padding: 0.5rem;
+    position: fixed;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav img {
+    cursor: pointer;
+    padding-top: 25px;
+    margin-bottom: 0.5rem; 
+}
+
+.product-box {
+    display: block;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-left: 7rem;
+}
+
+
+.product-pic {
+    max-width: 100px;
+    height: auto;
+}
+
+.product-name {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+
